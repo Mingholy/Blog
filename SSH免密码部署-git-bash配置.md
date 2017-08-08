@@ -20,7 +20,7 @@ ssh-add -l
 走一遍才能正确部署。  
 <!--more-->
 github提供了一个将开启ssh-agent、添加公钥与启动bash捆绑的脚本。这样在每次开启git-bash的时候，公钥就已经添加，因此可以直接部署，而不必重复添加操作。
-{% codeblock lang:bash %}
+```shell
 # Note: ~/.ssh/environment should not be used, as it
 #       already has a different purpose in SSH.
 
@@ -71,6 +71,6 @@ elif ! agent_has_keys; then
 fi
 
 unset env
-{% endcodeblock %}
+```
 将该脚本添加到`.profile`中即可。
 参考：[Working with SSH key passphrases](https://help.github.com/articles/working-with-ssh-key-passphrases/)
