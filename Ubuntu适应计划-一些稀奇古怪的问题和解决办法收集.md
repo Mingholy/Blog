@@ -1,9 +1,18 @@
+---
+title: "Ubuntu适应计划-FAQ"
+date: 2017-08-08 0800
+tags: [Linux]
+categories: [Linux]
+---
+
 # Ubuntu适应计划
-1. 终端和在终端里打开的编辑器无法输入中文的问题：
+## 终端无法输入中文
+终端和在终端里打开的编辑器无法输入中文的问题：
 ```shell
 gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
 ```
-2. 刚刚遇到的问题。在Ubuntu下使用
+## `npm i -g`权限问题
+刚刚遇到的问题。在Ubuntu下使用
 ```shell
 npm i -g <packagename>
 ```
