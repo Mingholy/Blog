@@ -123,8 +123,8 @@ export default Popover;
 > transform-origin CSS属性让你更改一个元素变形的原点。
 
 需要注意的是它作为Working Draft阶段的CSS特性，还没有一个通用的使用方式。  
-Chrome | Firefox | IE | Opera | Safari
--------|---------|----|-------|-------
+Chrome | Firefox | IE | Opera | Safari  
+-------|---------|----|-------|-------  
 `-webkit`|`-moz`|`-ms`|`-o`|`-webkit`
 
 其中三值语法Opera还没有实现。参考[MDN `transform-origin`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-origin)

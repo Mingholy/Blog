@@ -3,3 +3,16 @@
 ```shell
 gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
 ```
+2. 刚刚遇到的问题。在Ubuntu下使用
+```shell
+npm i -g <packagename>
+```
+或`yarn`的类似命令时，总会遇到权限不够的情况，这是因为全局安装的package都在`/usr/lib/node_modules`里面，普通用户没有写权限。这时可以：
+```shell
+sudo chown -R me /usr/lib/node_modules
+```
+来临时更改全局包文件夹的权限，然后再
+```shell
+npm i -g <packagename>
+```
+即可，之后再把权限改回root。之前使用`sudo npm i -g <packagename>`也会出现这种问题，是因为一些包比如`hexo-cli`等都是有postinstall脚本的，之后运行的这些脚本也需要root权限，就会报错。
