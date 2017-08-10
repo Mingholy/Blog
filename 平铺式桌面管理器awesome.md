@@ -64,7 +64,8 @@ AwesomeWM的配置文件位于`~/.config/awesome/rc.lua`，这个文件可以在
 
 下面是一些我根据自己的情况修改的配置项，有些通用的选项还是比较有必要的：
 以主题`multicolor`为例：
-1. 设置常用项：  
+
+#### 设置常用项：
 ```lua
 local editor       = "vim"
 local browser      = "google-chrome"
@@ -72,7 +73,7 @@ local terminal     = "gnome-terminal"
 ```
 由于我的系统原来使用的是Gnome，所以比较习惯原来的terminal，当然你也可以换成其他的xterm之类的。
 
-2. 布局(layouts)：  
+#### 布局(layouts):
 这里建议只保留`tile`类别下的各个布局。毕竟我们安装这个东西就是为了平铺布局。  
 我的设置是：
 ```lua
@@ -94,10 +95,11 @@ awful.layout.layouts = {
     lain.layout.termfair.center,
 }
 ```
-3. 图标大小
+
+#### 图标大小
 以我的屏幕分辨率(2560x1440)感觉，12还算可以。可以在文件中搜索数字，来选择替换。
 
-4. 菜单
+#### 菜单
 ```lua
 local myawesomemenu = {
     { ">>___Reboot___<<", "reboot"},
@@ -126,7 +128,7 @@ awful.util.mymainmenu = freedesktop.menu.build({
 ```
 这里我在一级菜单(`mymainmenu`)下添加了编辑器、awesome菜单和锁屏选项；在awesome这个一级菜单项下添加了重启和关机这两个二级菜单选项。
 
-5. 规则(Rules)
+#### 规则(Rules)
 这里主要是控制窗口行为的一些规则。
 ```lua
 awful.rules.rules = {
@@ -159,14 +161,14 @@ awful.rules.rules = {
 }
 ```
 这些选项的主要目的是：
-1. 新建窗口时，新窗口的默认样式和行为
-2. 按照程序(窗口类别)设置新窗口样式和行为
+    1. 新建窗口时，新窗口的默认样式和行为
+    2. 按照程序(窗口类别)设置新窗口样式和行为
 
 比如这里我设置ss-qt5客户端自启动后显示在屏幕1的标签5中。
 另一个必要的设置是：
 > 让Chrome新窗口默认不处于最大化状态，禁用浮动。这个设置可以在Chrome窗口存在的情况下，和其他窗口平铺。否则新建一个窗口，如终端窗口，会盖在Chrome上方，Chrome会自动被设置为浮动窗口，而不能正常平铺。
 
-6. 声音调整
+#### 声音调整
 使用下列设置可以将`alt + ↑`、`alt + ↓`和`alt + m`映射成音量加、音量减和切换静音。
 注意：这些设置需要在`Key bindings`下修改，可以搜索"ALSA volume control"来修改原有的声音设置。
 ```lua
